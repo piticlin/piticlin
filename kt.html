@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta title="Colores"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 300;
+            font-size: 100%;
+        }
+        
+        /* ::::: CARTAS ::::: */
+        
+        .carta {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1em;
+            background: #ffffff;
+            box-shadow: 0 0 1em rgba(0,0,0,0.25);
+            padding: 1em;
+            margin: 0.5em;
+            border-radius: 0.25em;
+        }
+        
+        /* IMAGEN */
+        
+        .miniatura {
+            height: 6em;
+            width: 6em;
+            overflow: hidden;
+            background: #f70;
+            position: relative;
+            border-radius: 50%;
+            border: 0.25em solid #f70;
+            grid-column: 1 / 2;
+        }
+        .miniatura img {
+            width: 300%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /**/
+        
+        .nombre {
+            font-weight: 700;
+            font-size: 1.5em;
+            line-height: 100%;
+            margin: 0 0 0.75em;
+            text-rendering: geometricPrecision;
+            text-transform: uppercase;
+            grid-column: 2 / 5;
+        }
+        
+        .tabla {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            margin: 0 0 1em;
+            font-weight: 400;
+        }
+        .atributos {
+            grid-column: 2 / 5;
+        }
+        .atributos .fila {}
+        .atributos .fila-encabezado {
+            background: #f70;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #ffffff;
+        }
+        .atributos .fila-datos {
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 100%;
+            border-bottom: 0.125em solid #f70;
+        }
+        .atributos .fila-datos td {
+            padding: 0.25em 0;
+        }
+        
+        /* ARMAS */
+        
+        .armas {
+            grid-column: 1 / 6;
+        }
+        
+        .armas .fila-encabezado {
+            background: #dddddd;
+        }
+        .armas .fila-encabezado td {}
+        .armas .fila-datos {}
+        .armas .fila-datos td {}
+        
+        /* HABILIDADES Y ACCIONES */
+        
+        .habilidades, .acciones {
+            grid-column: 1 / 6;
+        }
+        .habilidades h2, .acciones h2 {
+            font-size: 1.25em;
+            font-weight: 700;
+            line-height: 100%;
+            background: #dddddd;
+            padding: 0.25em;
+        }
+        .habilidades p, .acciones p {
+            font-size: 0.875em;
+            line-height: 125%;
+        }
+        .habilidades {}
+        .habilidades h2 {}
+        .habilidades p {}
+        .acciones {}
+        .acciones h2 {}
+        .acciones p {}
+        
+        /* ETIQUETAS */
+        
+        .etiquetas {
+            grid-column: 1 / 6;
+            padding: 0.375em 0.5em 0.5em;
+            border: 0.0625em solid #f70;
+        }
+        .etiqueta-faccion, .etiqueta {
+            font-size: 0.875em;
+            line-height: 100%;
+            font-weight: 400;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0.25em;
+            margin-right: 0.5em;
+        }
+        .etiqueta-faccion {
+            background: #f70;
+            color: #ffffff;
+        }
+        .etiqueta {
+            background: #dddddd;
+        }
+        
+        /* FORMAS */
+        
+        .triangulo {
+            position: relative;
+            color: black;
+        }
+        .triangulo:before {
+            content: '1';
+            position: absolute;
+            top: 50%;
+            left:50%;
+            color: #f70;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+        }
+        .circulo {
+            position: relative;
+            color: lemonchiffon;
+        }
+        .circulo:before {
+            content: '2';
+            position: absolute;
+            top: 50%;
+            left:50%;
+            color: #f70;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+        }
+        .cuadrado {
+            position: relative;
+            color: blue;
+        }
+        .cuadrado:before {
+            content: '3';
+            position: absolute;
+            top: 50%;
+            left:50%;
+            color: #f70;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+        }
+        .pentagono {
+            position: relative;
+            color: red;
+        }
+        .pentagono:before {
+            content: '6';
+            position: absolute;
+            top: 50%;
+            left:50%;
+            color: #f70;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <article class="carta">
+        <div class="miniatura">
+            <img src="kommando-dakka-boy.png" />
+        </div>
+    <h1 class="nombre">Kommando Grot</h1>
+    <table class="tabla atributos">
+        <tr class="fila fila-encabezado">
+            <td>Movimiento</td>
+            <td>Acciones</td>
+            <td>Grupo</td>
+            <td>Defensa</td>
+            <td>Salvación</td>
+            <td>Heridas</td>
+        </tr>
+        <tr class="fila fila-datos">
+            <td>3 <span class="circulo">&#11044;</span></td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+            <td>5+</td>
+            <td>
+                <select>
+                    <option>7</option>
+                    <option>6</option>
+                    <option>5</option>
+                    <option>4</option>
+                    <option>3</option>
+                    <option>2</option>
+                    <option>1</option>
+                    <option>0</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    
+    <table class="tabla armas">
+        <tr class="fila fila-encabezado">
+            <td>Tipo</td>
+            <td>Nombre</td>
+            <td>Ataques</td>
+            <td>Impacto</td>
+            <td>Daño</td>
+            <td>Especial</td>
+            <td>Críticos</td>
+        </tr>
+        <tr class="fila fila-datos">
+            <td>CaC</td>
+            <td>Grot Choppa</td>
+            <td>3</td>
+            <td>5+</td>
+            <td>1/4</td>
+            <td>&#151;</td>
+            <td>&#151;</td>
+        </tr>
+    </table>
+        <div class="habilidades">
+            <h2>Abilities</h2>
+            <p><strong>Sneaky Zogger:</strong> This operative cannot have an Engage order. In addition, this operative is always treated as having a Conceal order, regardless of any other rules (e.g. Vantage Point).</p>
+        </div>
+        <div class="acciones">
+            <h2>Unique Actions</h2>
+            <p><strong>Grappling Hook:</strong> Select a point on a terrain feature that is Visible to this operative (treat that point as an intented target). Perform a free <span>Normal Move</span> action with this operative, moving in a single straight line with an unlimited Movement as though it can <span>Fly.</span> It must finish that move within <span class="triangulo">&#9650;</span> of thaht point.</p>
+        </div>
+        <div class="etiquetas">
+            <span class="etiqueta-faccion">Komando</span>
+            <span class="etiqueta">&#60;Clan&#62;</span><span class="etiqueta">Kommando Grot</span>
+            <span class="triangulo">&#9650;</span>
+            <span class="circulo">&#11044;</span>
+            <span class="cuadrado">&#9724;</span>
+            <span class="pentagono">&#11039;</span>
+        </div>
+    </article>
+    
+</body>
+</html>
